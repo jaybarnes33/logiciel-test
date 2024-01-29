@@ -24,7 +24,7 @@ export default function Home() {
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
-              &ldquo;Let's document your journeys &rdquo;
+              &ldquo;Let&apos;s document your journeys &rdquo;
             </p>
           </blockquote>
         </div>

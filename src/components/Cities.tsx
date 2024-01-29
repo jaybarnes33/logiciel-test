@@ -65,7 +65,11 @@ const Cities = () => {
         />
       </div>
 
-      <Button type="button" onClick={addCity}>
+      <Button
+        disabled={!city.name || !city.date}
+        type="button"
+        onClick={addCity}
+      >
         Add City
       </Button>
     </div>

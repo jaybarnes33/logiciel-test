@@ -120,33 +120,6 @@ export function Form({ className, ...props }: FormProps) {
           </div>
         )}
         {step === 1 && <Cities />}
-
-        {step !== 2 && (
-          <div className="my-4 flex justify-around">
-            {step > 0 && step < 2 && (
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setStep((step) => step - 1)}
-                disabled={isLoading}
-              >
-                Back
-              </Button>
-            )}
-
-            {step < 1 && (
-              <Button type="button" onClick={handleForm} disabled={isLoading}>
-                Next
-              </Button>
-            )}
-
-            {step >= 1 && (
-              <Button type="submit" onClick={handleForm} disabled={isLoading}>
-                Submit
-              </Button>
-            )}
-          </div>
-        )}
         {step > 1 && (
           <Card className="w-[400px]">
             <CardHeader>
@@ -173,7 +146,7 @@ export function Form({ className, ...props }: FormProps) {
             </CardHeader>
 
             <CardContent>
-              <h1>Cities Visited</h1>
+              <h1 className="font-bold">Cities Visited</h1>
               <Table>
                 <TableCaption>A list of cities you have visited</TableCaption>
                 <TableHeader>
@@ -194,6 +167,32 @@ export function Form({ className, ...props }: FormProps) {
               </Table>
             </CardContent>
           </Card>
+        )}
+        {step !== 2 && (
+          <div className="my-4 flex justify-around">
+            {step > 0 && step < 2 && (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setStep((step) => step - 1)}
+                disabled={isLoading}
+              >
+                Back
+              </Button>
+            )}
+
+            {step < 1 && (
+              <Button type="button" onClick={handleForm} disabled={isLoading}>
+                Next
+              </Button>
+            )}
+
+            {step >= 1 && (
+              <Button type="submit" onClick={handleForm} disabled={isLoading}>
+                Submit
+              </Button>
+            )}
+          </div>
         )}
       </form>
     </div>
